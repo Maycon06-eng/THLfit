@@ -1,98 +1,85 @@
+:root {
+  --bg: #0f0f0f;
+  --fg: #e5e5e5;
+  --muted: #777;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #222;
+  background: var(--bg);
+  color: var(--fg);
+  overflow-x: hidden;
 }
 
-/* HEADER */
-header {
-    background: #111;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-header nav a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
+.bottle {
+  width: 320px;
+  position: absolute;
+  z-index: 1;
+  filter: drop-shadow(0 0 40px rgba(255,255,255,.15));
 }
 
-/* BANNER */
-.banner {
-    background: linear-gradient(90deg, #222, #555);
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
+.hero h1 {
+  font-size: 6rem;
+  letter-spacing: 8px;
+  z-index: 2;
 }
 
-.banner button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    border: none;
-    background: #000;
-    color: white;
-    cursor: pointer;
+.pill-zone {
+  height: 100vh;
+  position: relative;
 }
 
-/* PRODUTOS */
-.produtos {
-    padding: 60px 20px;
-    text-align: center;
+.pill {
+  width: 40px;
+  position: absolute;
+  top: -100px;
+  opacity: 0;
 }
 
-.produtos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 120px;
 }
 
-.produto {
-    background: white;
-    padding: 20px;
-    border-radius: 6px;
+.product {
+  background: #151515;
+  padding: 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .4s;
 }
 
-.produto img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.product:hover {
+  transform: translateY(-12px) scale(1.03);
 }
 
-.preco {
-    font-weight: bold;
-    margin: 10px 0;
+.product img {
+  width: 100%;
 }
 
-.produto button {
-    background: #111;
-    color: white;
-    padding: 10px;
-    border: none;
-    width: 100%;
-    cursor: pointer;
+.product span {
+  font-weight: bold;
 }
 
-/* SOBRE & CONTATO */
-.sobre, .contato {
-    padding: 50px 20px;
-    background: #eaeaea;
-    text-align: center;
-}
-
-/* FOOTER */
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 15px;
+.product-detail {
+  min-height: 100vh;
+  padding: 120px;
+  opacity: 0;
 }
